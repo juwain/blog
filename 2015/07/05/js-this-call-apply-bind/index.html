@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS-ликбез. this, call, apply, bind | Заметки о фронтенде | Блог Виталия Зюзина</title>
+  <meta name="author" content="Виталий Зюзин">
+  
+  <meta name="description" content="А сегодня я буду вещать про this и методы вызова функций.
+Тот самый thisЧтобы вызвать функцию и передать в неё желаемый объект в качестве this, можно ">
+  
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JS-ликбез. this, call, apply, bind"/>
+  <meta property="og:site_name" content="Заметки о фронтенде"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Заметки о фронтенде" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+  <div class="toggleWrapper">
+    <a id="btnToggleGrid" class="btnToggleGrid" href="javascript:void(0)">Turn Grid On</a>
+  </div>
+
+  <header><hgroup class="alignCenter">
+    <h1>Заметки о фронтенде</h1>
+    <p>
+        Блог Виталия Зюзина
+    </p>
+    <p>
+        <img src="/img/mech-heart.svg" alt="avatar" class="logo" width="80" height="104">
+    </p>
+</hgroup>
+</header>
+
+  <article class="post article">
+
+  <div class="article-top">
+    
+  
+    <h2 class="article-title"><span>JS-ликбез. this, call, apply, bind</span></h2>
+  
+
+
+
+    <time class="entry-date published" datetime="2015-07-05T20:22:48.000Z">
+      05.07.2015
+    </time>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>А сегодня я буду вещать про <code>this</code> и методы вызова функций.</p>
+<h3 id="Тот-самый-this"><a href="#Тот-самый-this" class="headerlink" title="Тот самый this"></a>Тот самый this</h3><p>Чтобы вызвать функцию и передать в неё желаемый объект в качестве <code>this</code>, можно воспользоваться методами функций <code>call</code>, <code>apply</code> или <code>bind</code>. Рассмотрим их различия.</p>
+<h3 id="Метод-call"><a href="#Метод-call" class="headerlink" title="Метод call"></a>Метод call</h3><p>В качестве аргументов метод <code>call</code> функции первым принимает объект, который станет <code>this</code> внутри функции. За ним перечисляются через запятую параметры самой функции.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> + param2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.call(favorite, <span class="string">'яблоко'</span>, <span class="string">'груша'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша»</span></span><br></pre></td></tr></table></figure>
+<h3 id="Метод-apply"><a href="#Метод-apply" class="headerlink" title="Метод apply"></a>Метод apply</h3><p>Метод <code>apply</code> отличается от <code>call</code> тем, что в него можно передать любое число параметров в виде одного массива. В случае, когда параметров у функции много, нет необходимости их всех перечислять через запятую, а можно просто передать одним массивом.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2, param3</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> +</span><br><span class="line">  param2 + <span class="string">', '</span> + param3);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.apply(favorite, [<span class="string">'яблоко'</span>, <span class="string">'груша'</span>, <span class="string">'вишня'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша, вишня»</span></span><br></pre></td></tr></table></figure>
+<p>Массивом в функцию удобно как раз передавать неопределённое число параметров. И внутри функции в таком случае лучше не завязываться на конкретные названия параметров, а использовать объект <code>arguments</code> для доступа ко всем параметрам сразу.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> +</span><br><span class="line">  [].slice.call(<span class="built_in">arguments</span>).join(<span class="string">', '</span>));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.apply(favorite, [<span class="string">'яблоко'</span>, <span class="string">'груша'</span>, <span class="string">'вишня'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша, вишня»</span></span><br></pre></td></tr></table></figure>
+<h3 id="Метод-bind"><a href="#Метод-bind" class="headerlink" title="Метод bind"></a>Метод bind</h3><p>Метод <code>bind</code> отличается тем, что не выполняет функцию сразу, как <code>call</code> и <code>apply</code>, а возвращает её. Возвращённая функция вызвается как обычно, но внутри неё уже будет заданный <code>this</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> + param2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = omnomnom.bind(favorite, <span class="string">'яблоко'</span>);</span><br><span class="line">func(<span class="string">'груша'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша»</span></span><br></pre></td></tr></table></figure>
+<p>Заметьте, что остальные параметры могут передаваться списком через запятую как в метод <code>bind</code>, так и при вызове возвращенной функции.</p>
+<p>Продолжение следует…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+        <div class="article-meta pull-left">
+          
+          
+  
+
+  <span class="post-tags">
+    <i class="icon-tags"></i>
+    <a href="/tags/JS/">JS</a>
+  </span>
+
+
+        </div>
+    </footer>
+  </div>
+</article>
+
+
+  <footer role="contentinfo"><p class="site-info">
+  Спасибо <a href="https://hexo.io/" target="_blank">Hexo</a>
+  </br>
+  
+  &copy; 2016 Виталий Зюзин
+  
+</p>
+</footer>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
