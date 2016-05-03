@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Заметки о фронтенде</title>
   <subtitle>Блог Виталия Зюзина</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://juwain.github.io/blog/"/>
   <updated>2016-05-03T17:01:13.000Z</updated>
