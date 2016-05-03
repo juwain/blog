@@ -2,37 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://juwain.github.io/blog/blog/2015/09/03/pomodoro-technique/</loc>
+    <loc>https://juwain.github.io/blog/blog/2015/01/21/atom/</loc>
     
-    <lastmod>2016-05-03T17:01:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juwain.github.io/blog/blog/2014/10/03/user-way/</loc>
-    
-    <lastmod>2016-05-03T16:19:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juwain.github.io/blog/blog/2015/07/05/js-this-call-apply-bind/</loc>
-    
-    <lastmod>2016-05-03T16:19:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juwain.github.io/blog/blog/2015/06/11/js-objects-and-primitive-values/</loc>
-    
-    <lastmod>2016-05-03T16:19:13.000Z</lastmod>
+    <lastmod>2016-05-03T17:40:22.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://juwain.github.io/blog/blog/2015/06/21/js-loops-and-array-iterating/</loc>
     
-    <lastmod>2016-05-03T16:19:07.000Z</lastmod>
+    <lastmod>2016-05-03T17:38:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juwain.github.io/blog/blog/2015/06/11/js-objects-and-primitive-values/</loc>
+    
+    <lastmod>2016-05-03T17:38:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juwain.github.io/blog/blog/2015/07/05/js-this-call-apply-bind/</loc>
+    
+    <lastmod>2016-05-03T17:38:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juwain.github.io/blog/blog/2015/09/03/pomodoro-technique/</loc>
+    
+    <lastmod>2016-05-03T17:38:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juwain.github.io/blog/blog/2014/10/03/user-way/</loc>
+    
+    <lastmod>2016-05-03T17:38:25.000Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://juwain.github.io/blog/blog/2015/07/14/background-offsets/</loc>
     
     <lastmod>2016-05-03T16:18:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juwain.github.io/blog/blog/2015/01/21/atom/</loc>
-    
-    <lastmod>2016-05-03T16:18:37.000Z</lastmod>
     
   </url>
   

@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://juwain.github.io/blog/"/>
-  <updated>2016-05-03T17:01:13.000Z</updated>
+  <updated>2016-05-03T17:38:30.000Z</updated>
   <id>https://juwain.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://juwain.github.io/blog/2015/09/03/pomodoro-technique/"/>
     <id>https://juwain.github.io/blog/2015/09/03/pomodoro-technique/</id>
     <published>2015-09-03T06:00:00.000Z</published>
-    <updated>2016-05-03T17:01:13.000Z</updated>
+    <updated>2016-05-03T17:38:30.000Z</updated>
     
     <content type="html">&lt;p&gt;На прошедшей неделе я попробовал управлять своим рабочим временем нестихийным образом.&lt;/p&gt;
 &lt;p&gt;Накануне в ленте упомянули про технику &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%B4%D0%BE%D1%80_%28%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%29&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pomodoro&lt;/a&gt;. Я решил провести эту рабочую неделю с помидорной техникой и посмотреть, что из этого получится.&lt;/p&gt;
@@ -63,7 +63,7 @@
     </summary>
     
     
-      <category term="time management" scheme="https://juwain.github.io/blog/tags/time-management/"/>
+      <category term="управление временем" scheme="https://juwain.github.io/blog/tags/%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B5%D0%BC/"/>
     
   </entry>
   
@@ -119,7 +119,7 @@
     <link href="https://juwain.github.io/blog/2015/07/05/js-this-call-apply-bind/"/>
     <id>https://juwain.github.io/blog/2015/07/05/js-this-call-apply-bind/</id>
     <published>2015-07-05T20:22:48.000Z</published>
-    <updated>2016-05-03T16:19:17.000Z</updated>
+    <updated>2016-05-03T17:38:34.000Z</updated>
     
     <content type="html">&lt;p&gt;А сегодня я буду вещать про &lt;code&gt;this&lt;/code&gt; и методы вызова функций.&lt;/p&gt;
 &lt;h3 id=&quot;Тот-самый-this&quot;&gt;&lt;a href=&quot;#Тот-самый-this&quot; class=&quot;headerlink&quot; title=&quot;Тот самый this&quot;&gt;&lt;/a&gt;Тот самый this&lt;/h3&gt;&lt;p&gt;Чтобы вызвать функцию и передать в неё желаемый объект в качестве &lt;code&gt;this&lt;/code&gt;, можно воспользоваться методами функций &lt;code&gt;call&lt;/code&gt;, &lt;code&gt;apply&lt;/code&gt; или &lt;code&gt;bind&lt;/code&gt;. Рассмотрим их различия.&lt;/p&gt;
@@ -154,7 +154,7 @@
     <link href="https://juwain.github.io/blog/2015/06/21/js-loops-and-array-iterating/"/>
     <id>https://juwain.github.io/blog/2015/06/21/js-loops-and-array-iterating/</id>
     <published>2015-06-21T20:45:52.000Z</published>
-    <updated>2016-05-03T16:19:07.000Z</updated>
+    <updated>2016-05-03T17:38:40.000Z</updated>
     
     <content type="html">&lt;p&gt;В этой части ликбеза речь пойдёт о циклах и обходе массивов в JS.&lt;/p&gt;
 &lt;h3 id=&quot;Переменная-длины-массива&quot;&gt;&lt;a href=&quot;#Переменная-длины-массива&quot; class=&quot;headerlink&quot; title=&quot;Переменная длины массива&quot;&gt;&lt;/a&gt;Переменная длины массива&lt;/h3&gt;&lt;p&gt;В цикле &lt;code&gt;for&lt;/code&gt;, если он используется для пробега по массиву,  лучше сохранить значение длины массива в отдельную переменную, чем брать её каждую итерацию через &lt;code&gt;array.length&lt;/code&gt;.&lt;/p&gt;
@@ -202,7 +202,7 @@
     <link href="https://juwain.github.io/blog/2015/06/11/js-objects-and-primitive-values/"/>
     <id>https://juwain.github.io/blog/2015/06/11/js-objects-and-primitive-values/</id>
     <published>2015-06-11T20:51:04.000Z</published>
-    <updated>2016-05-03T16:19:13.000Z</updated>
+    <updated>2016-05-03T17:38:37.000Z</updated>
     
     <content type="html">&lt;p&gt;В этой серии статей я собираюсь осветить те части JavaScript, которые показались мне интересными в момент изучения. Статьи будут состоять из небольших блоков с примерами.&lt;/p&gt;
 &lt;p&gt;Поехали!&lt;/p&gt;
@@ -276,7 +276,7 @@
     <link href="https://juwain.github.io/blog/2015/01/21/atom/"/>
     <id>https://juwain.github.io/blog/2015/01/21/atom/</id>
     <published>2015-01-20T21:07:01.000Z</published>
-    <updated>2016-05-03T16:18:37.000Z</updated>
+    <updated>2016-05-03T17:40:22.000Z</updated>
     
     <content type="html">&lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/pres/atom-overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
 </content>
@@ -299,14 +299,14 @@
     <link href="https://juwain.github.io/blog/2014/10/03/user-way/"/>
     <id>https://juwain.github.io/blog/2014/10/03/user-way/</id>
     <published>2014-10-02T21:47:38.000Z</published>
-    <updated>2016-05-03T16:19:27.000Z</updated>
+    <updated>2016-05-03T17:38:25.000Z</updated>
     
     <content type="html">&lt;p&gt;Человек всегда стремился к совершенству: поймать мамонта покрупнее, построить лодку прочнее, возвести просторнее дом. Это качество в нас от природы. И в стремлении достичь цель (получить выгоду, возможности или влияние) мы стараемся затратить как можно меньше собственных ресурсов.&lt;/p&gt;
 &lt;p&gt;Так работает наш мозг: лень выполнять бессмысленные действия, тратить силы и время, если это не принесёт плодов. Но если цель ясна, а профит от её достижения очевиден, то человек способен найти более короткий путь, научиться что-то делать эффективнее или изменить окружение, чтобы меньше потратить ресурсов и при этом больше получить.&lt;/p&gt;
 &lt;p&gt;В большинстве каждодневных решений мы руководствуемся паттернами поведения, которые мозг всю жизнь старательно накапливает. Паттерны формируются в основном из прямого опыта человека и нужны для того, чтобы в привычных ситуациях не обдумывать одинаковые решения каждый раз заново.&lt;/p&gt;
 &lt;p&gt;В любой ситуации мозг в первую очередь выдаст наименее ресурсоёмкие шаблонные решения. За примером далеко ходить не надо:&lt;/p&gt;
-&lt;img src=&quot;/2014/10/03/user-way/road1.jpg&quot; alt=&quot;Первая дорога&quot; title=&quot;Первая дорога&quot;&gt;
-&lt;img src=&quot;/2014/10/03/user-way/road2.jpg&quot; alt=&quot;Вторая дорога&quot; title=&quot;Вторая дорога&quot;&gt;
+&lt;img src=&quot;/blog/2014/10/03/user-way/road1.jpg&quot; alt=&quot;Первая дорога&quot; title=&quot;Первая дорога&quot;&gt;
+&lt;img src=&quot;/blog/2014/10/03/user-way/road2.jpg&quot; alt=&quot;Вторая дорога&quot; title=&quot;Вторая дорога&quot;&gt;
 &lt;p&gt;Самый удобный путь — простой и короткий. Если простое решение очевидно, становится лень прилагать лишние усилия.&lt;/p&gt;
 &lt;p&gt;Этот принцип можно применять при проектировании любой пользовательской системы: здания, парка, веб-приложения или чего-либо ещё.&lt;/p&gt;
 &lt;p&gt;Итак, пользователь появляется в новой для себя системе. У него есть определённые цели или же он исследует систему, придумывая цели на ходу. В своих решениях он руководствуется собственными паттернами поведения. И, вполне возможно, что цели человека отличаются от предположенных проектировщиком. Или же человек решает свои задачи своеобразно, не так, как планировалось.&lt;/p&gt;

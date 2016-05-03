@@ -68,11 +68,13 @@ blockquote {
   content: "☞";
   margin-left: 5px; }
 
-.post-tags::before {
-  content: "";
-  display: inline-block;
-  margin-right: 5px;
-  width: 19px;
-  height: 16px;
-  background: url("../img/icon-tags.svg") no-repeat 0 0;
-  vertical-align: middle; }
+.post-tags {
+  font-size: 18px; }
+  .post-tags::before {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: 19px;
+    height: 16px;
+    background: url("../img/icon-tags.svg") no-repeat 0 0;
+    vertical-align: middle; }
