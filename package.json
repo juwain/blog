@@ -1,0 +1,28 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": "3.2.0"
+  },
+  "dependencies": {
+    "hexo": "^3.2.0",
+    "hexo-deployer-git": "^0.1.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-feed": "^1.1.0",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-generator-sitemap": "^1.1.2",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.2.0",
+    "hexo-renderer-marked": "^0.2.10",
+    "hexo-renderer-sass": "^0.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "start": "hexo generate -w & gulp serve",
+    "clean": "hexo clean"
+  }
+}
