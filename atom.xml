@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Заметки о фронтенде</title>
   <subtitle>Блог Виталия Зюзина</subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="https://juwain.github.io/blog/"/>
-  <updated>2016-05-01T13:52:16.000Z</updated>
+  <updated>2016-05-03T17:01:13.000Z</updated>
   <id>https://juwain.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://juwain.github.io/blog/2015/09/03/pomodoro-technique/"/>
     <id>https://juwain.github.io/blog/2015/09/03/pomodoro-technique/</id>
     <published>2015-09-03T06:00:00.000Z</published>
-    <updated>2016-05-01T13:52:16.000Z</updated>
+    <updated>2016-05-03T17:01:13.000Z</updated>
     
     <content type="html">&lt;p&gt;На прошедшей неделе я попробовал управлять своим рабочим временем нестихийным образом.&lt;/p&gt;
 &lt;p&gt;Накануне в ленте упомянули про технику &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%B4%D0%BE%D1%80_%28%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%29&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pomodoro&lt;/a&gt;. Я решил провести эту рабочую неделю с помидорной техникой и посмотреть, что из этого получится.&lt;/p&gt;
@@ -72,7 +72,7 @@
     <link href="https://juwain.github.io/blog/2015/07/15/design-elements-button/"/>
     <id>https://juwain.github.io/blog/2015/07/15/design-elements-button/</id>
     <published>2015-07-15T13:54:28.000Z</published>
-    <updated>2016-05-01T14:04:42.000Z</updated>
+    <updated>2016-05-03T16:18:47.000Z</updated>
     
     <content type="html">&lt;p&gt;Потихоньку реализую элементы будущего дизайна HTML Academy. Вот, к примеру, кнопка с эффектом по наведению или фокусу.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;325&quot; data-theme-id=&quot;9939&quot; data-slug-hash=&quot;MwXvYv&quot; data-default-tab=&quot;result&quot; data-user=&quot;juwain&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/juwain/pen/MwXvYv/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Эффект кнопки&lt;/a&gt; by juwain (&lt;a href=&quot;http://codepen.io/juwain&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@juwain&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
@@ -87,7 +87,7 @@
     </summary>
     
     
-      <category term="front-end" scheme="https://juwain.github.io/blog/tags/front-end/"/>
+      <category term="CSS" scheme="https://juwain.github.io/blog/tags/CSS/"/>
     
   </entry>
   
@@ -96,7 +96,7 @@
     <link href="https://juwain.github.io/blog/2015/07/14/background-offsets/"/>
     <id>https://juwain.github.io/blog/2015/07/14/background-offsets/</id>
     <published>2015-07-14T14:00:05.000Z</published>
-    <updated>2016-05-01T14:04:39.000Z</updated>
+    <updated>2016-05-03T16:18:44.000Z</updated>
     
     <content type="html">&lt;p&gt;Простой способ добавить отступы фоновому изображению: &lt;br&gt;&lt;code&gt;background-position: center&lt;/code&gt; и &lt;code&gt;background-size: calc(100% - Npx)&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;380&quot; data-theme-id=&quot;9939&quot; data-slug-hash=&quot;zGawGV&quot; data-default-tab=&quot;result&quot; data-user=&quot;juwain&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/juwain/pen/zGawGV/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zGawGV&lt;/a&gt; by juwain (&lt;a href=&quot;http://codepen.io/juwain&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@juwain&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
@@ -110,7 +110,7 @@
     </summary>
     
     
-      <category term="front-end" scheme="https://juwain.github.io/blog/tags/front-end/"/>
+      <category term="CSS" scheme="https://juwain.github.io/blog/tags/CSS/"/>
     
   </entry>
   
@@ -119,7 +119,7 @@
     <link href="https://juwain.github.io/blog/2015/07/05/js-this-call-apply-bind/"/>
     <id>https://juwain.github.io/blog/2015/07/05/js-this-call-apply-bind/</id>
     <published>2015-07-05T20:22:48.000Z</published>
-    <updated>2016-05-01T20:45:12.000Z</updated>
+    <updated>2016-05-03T16:19:17.000Z</updated>
     
     <content type="html">&lt;p&gt;А сегодня я буду вещать про &lt;code&gt;this&lt;/code&gt; и методы вызова функций.&lt;/p&gt;
 &lt;h3 id=&quot;Тот-самый-this&quot;&gt;&lt;a href=&quot;#Тот-самый-this&quot; class=&quot;headerlink&quot; title=&quot;Тот самый this&quot;&gt;&lt;/a&gt;Тот самый this&lt;/h3&gt;&lt;p&gt;Чтобы вызвать функцию и передать в неё желаемый объект в качестве &lt;code&gt;this&lt;/code&gt;, можно воспользоваться методами функций &lt;code&gt;call&lt;/code&gt;, &lt;code&gt;apply&lt;/code&gt; или &lt;code&gt;bind&lt;/code&gt;. Рассмотрим их различия.&lt;/p&gt;
@@ -145,6 +145,8 @@
     
       <category term="JS" scheme="https://juwain.github.io/blog/tags/JS/"/>
     
+      <category term="JS-ликбез" scheme="https://juwain.github.io/blog/tags/JS-%D0%BB%D0%B8%D0%BA%D0%B1%D0%B5%D0%B7/"/>
+    
   </entry>
   
   <entry>
@@ -152,7 +154,7 @@
     <link href="https://juwain.github.io/blog/2015/06/21/js-loops-and-array-iterating/"/>
     <id>https://juwain.github.io/blog/2015/06/21/js-loops-and-array-iterating/</id>
     <published>2015-06-21T20:45:52.000Z</published>
-    <updated>2016-05-01T20:50:19.000Z</updated>
+    <updated>2016-05-03T16:19:07.000Z</updated>
     
     <content type="html">&lt;p&gt;В этой части ликбеза речь пойдёт о циклах и обходе массивов в JS.&lt;/p&gt;
 &lt;h3 id=&quot;Переменная-длины-массива&quot;&gt;&lt;a href=&quot;#Переменная-длины-массива&quot; class=&quot;headerlink&quot; title=&quot;Переменная длины массива&quot;&gt;&lt;/a&gt;Переменная длины массива&lt;/h3&gt;&lt;p&gt;В цикле &lt;code&gt;for&lt;/code&gt;, если он используется для пробега по массиву,  лучше сохранить значение длины массива в отдельную переменную, чем брать её каждую итерацию через &lt;code&gt;array.length&lt;/code&gt;.&lt;/p&gt;
@@ -191,6 +193,8 @@
     
       <category term="JS" scheme="https://juwain.github.io/blog/tags/JS/"/>
     
+      <category term="JS-ликбез" scheme="https://juwain.github.io/blog/tags/JS-%D0%BB%D0%B8%D0%BA%D0%B1%D0%B5%D0%B7/"/>
+    
   </entry>
   
   <entry>
@@ -198,7 +202,7 @@
     <link href="https://juwain.github.io/blog/2015/06/11/js-objects-and-primitive-values/"/>
     <id>https://juwain.github.io/blog/2015/06/11/js-objects-and-primitive-values/</id>
     <published>2015-06-11T20:51:04.000Z</published>
-    <updated>2016-05-01T21:00:27.000Z</updated>
+    <updated>2016-05-03T16:19:13.000Z</updated>
     
     <content type="html">&lt;p&gt;В этой серии статей я собираюсь осветить те части JavaScript, которые показались мне интересными в момент изучения. Статьи будут состоять из небольших блоков с примерами.&lt;/p&gt;
 &lt;p&gt;Поехали!&lt;/p&gt;
@@ -238,6 +242,8 @@
     
       <category term="JS" scheme="https://juwain.github.io/blog/tags/JS/"/>
     
+      <category term="JS-ликбез" scheme="https://juwain.github.io/blog/tags/JS-%D0%BB%D0%B8%D0%BA%D0%B1%D0%B5%D0%B7/"/>
+    
   </entry>
   
   <entry>
@@ -245,19 +251,23 @@
     <link href="https://juwain.github.io/blog/2015/02/03/atom-screencast/"/>
     <id>https://juwain.github.io/blog/2015/02/03/atom-screencast/</id>
     <published>2015-02-02T21:02:18.000Z</published>
-    <updated>2016-05-01T21:15:46.000Z</updated>
+    <updated>2016-05-03T16:18:31.000Z</updated>
     
     <content type="html">&lt;p&gt;А вот и подоспел ознакомительный дебютный скринкаст по Atom.&lt;/p&gt;
-&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;&lt;br&gt;&lt;iframe src=&quot;//www.youtube.com/embed/k2wyMbpvXWc&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/k2wyMbpvXWc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;А вот и подоспел ознакомительный дебютный скринкаст по Atom.&lt;/p&gt;
-&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;&lt;br&gt;&lt;iframe src=&quot;//
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/k2wyMb
     
     </summary>
     
+    
+      <category term="atom" scheme="https://juwain.github.io/blog/tags/atom/"/>
+    
+      <category term="workflow" scheme="https://juwain.github.io/blog/tags/workflow/"/>
     
   </entry>
   
@@ -266,7 +276,7 @@
     <link href="https://juwain.github.io/blog/2015/01/21/atom/"/>
     <id>https://juwain.github.io/blog/2015/01/21/atom/</id>
     <published>2015-01-20T21:07:01.000Z</published>
-    <updated>2016-05-01T21:15:25.000Z</updated>
+    <updated>2016-05-03T16:18:37.000Z</updated>
     
     <content type="html">&lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/pres/atom-overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
 </content>
@@ -277,6 +287,50 @@
     
     </summary>
     
+    
+      <category term="atom" scheme="https://juwain.github.io/blog/tags/atom/"/>
+    
+      <category term="workflow" scheme="https://juwain.github.io/blog/tags/workflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Пути пользователя</title>
+    <link href="https://juwain.github.io/blog/2014/10/03/user-way/"/>
+    <id>https://juwain.github.io/blog/2014/10/03/user-way/</id>
+    <published>2014-10-02T21:47:38.000Z</published>
+    <updated>2016-05-03T16:19:27.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Человек всегда стремился к совершенству: поймать мамонта покрупнее, построить лодку прочнее, возвести просторнее дом. Это качество в нас от природы. И в стремлении достичь цель (получить выгоду, возможности или влияние) мы стараемся затратить как можно меньше собственных ресурсов.&lt;/p&gt;
+&lt;p&gt;Так работает наш мозг: лень выполнять бессмысленные действия, тратить силы и время, если это не принесёт плодов. Но если цель ясна, а профит от её достижения очевиден, то человек способен найти более короткий путь, научиться что-то делать эффективнее или изменить окружение, чтобы меньше потратить ресурсов и при этом больше получить.&lt;/p&gt;
+&lt;p&gt;В большинстве каждодневных решений мы руководствуемся паттернами поведения, которые мозг всю жизнь старательно накапливает. Паттерны формируются в основном из прямого опыта человека и нужны для того, чтобы в привычных ситуациях не обдумывать одинаковые решения каждый раз заново.&lt;/p&gt;
+&lt;p&gt;В любой ситуации мозг в первую очередь выдаст наименее ресурсоёмкие шаблонные решения. За примером далеко ходить не надо:&lt;/p&gt;
+&lt;img src=&quot;/2014/10/03/user-way/road1.jpg&quot; alt=&quot;Первая дорога&quot; title=&quot;Первая дорога&quot;&gt;
+&lt;img src=&quot;/2014/10/03/user-way/road2.jpg&quot; alt=&quot;Вторая дорога&quot; title=&quot;Вторая дорога&quot;&gt;
+&lt;p&gt;Самый удобный путь — простой и короткий. Если простое решение очевидно, становится лень прилагать лишние усилия.&lt;/p&gt;
+&lt;p&gt;Этот принцип можно применять при проектировании любой пользовательской системы: здания, парка, веб-приложения или чего-либо ещё.&lt;/p&gt;
+&lt;p&gt;Итак, пользователь появляется в новой для себя системе. У него есть определённые цели или же он исследует систему, придумывая цели на ходу. В своих решениях он руководствуется собственными паттернами поведения. И, вполне возможно, что цели человека отличаются от предположенных проектировщиком. Или же человек решает свои задачи своеобразно, не так, как планировалось.&lt;/p&gt;
+&lt;p&gt;Что важно сделать на этом этапе знакомства с системой? Не ругать и не обижаться на пользователя за то, что он какой-то неправильный. И не заставлять идти пользователя одним непреложным путём, только потому, что так решил автор или заказчик системы. Наоборот — нужно не препятствовать пользователям и тщательно собрать и проанализировать их поведение внутри системы. При этом важно, чтобы пользователи чувствовали себя естественно и обладали достаточной свободой в принятии решений.&lt;/p&gt;
+&lt;p&gt;Действия пользователей фиксируются двумя способами:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Пользователи сами оставляют следы, видоизменяя систему, как в случае с тропинками, фиксируются и анализируются уже последствия этих изменений. При этом прямое наблюдение за процессом может не вестись. Наиболее распространённые действия пользователей наглядно проявляются в изменениях самой системы.&lt;/li&gt;
+&lt;li&gt;Наблюдается непосредственно сам процесс пользовательских действий. Все наблюдения анализируются и выявляются общие признаки, направления и цели. Этот способ больше подходит для виртуальных систем, где пользователь не всегда может непосредственно влиять на систему.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;В обоих случаях пользователей можно дополнительно опрашивать по результатам взаимодействия с системой, но наиболее важными всё равно являются сами их действия, а не впечатления, так как многие их склонны приукрашивать.&lt;/p&gt;
+&lt;p&gt;Выявленные закономерности целей и направлений («протоптанные тропинки») берутся за основу при строительстве «постоянных дорог» пользователей в системе. Увидев заасфальтированную дорожку на месте привычной тропинки, пользователь будет счастлив по ней ходить. Системой с естественной навигацией, простой и понятной для большинства, будут часто и с удовольствием пользоваться.&lt;/p&gt;
+&lt;p&gt;При этом даже не самый удобный путь можно сделать необычным и увлекательным, и люди будут выбирать его.&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/5jw0_3-GbMg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;Это тема для следующей статьи.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Человек всегда стремился к совершенству: поймать мамонта покрупнее, построить лодку прочнее, возвести просторнее дом. Это качество в нас 
+    
+    </summary>
+    
+    
+      <category term="UX" scheme="https://juwain.github.io/blog/tags/UX/"/>
     
   </entry>
   

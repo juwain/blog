@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .article-top {
   text-align: center; }
 
@@ -6,14 +7,22 @@
   width: 80px;
   height: 104px; }
 
-.article-title a {
+.article-title a,
+a.title {
   color: inherit;
   text-decoration: none; }
 
-.entry-date {
+.entry-date,
+.article-meta,
+.article-meta a,
+.site-info,
+.archive-date {
   font-size: 0.75em;
-  letter-spacing: 1px;
   color: rgba(102, 102, 102, 0.7); }
+
+.article-meta,
+.site-info {
+  text-align: center; }
 
 blockquote {
   padding: 10px 20px;
@@ -21,3 +30,49 @@ blockquote {
   border-left: 5px solid #eeeeee; }
   blockquote p {
     margin-bottom: 0; }
+
+.video-container {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; }
+  .video-container embed,
+  .video-container iframe,
+  .video-container object,
+  .video-container video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; }
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .pagination a {
+    text-decoration: none; }
+    .pagination a::before, .pagination a::after {
+      font-size: 36px;
+      vertical-align: middle; }
+
+.pagination-prev::before {
+  content: "☜";
+  margin-right: 5px; }
+
+.pagination-next::after {
+  content: "☞";
+  margin-left: 5px; }
+
+.post-tags::before {
+  content: "";
+  display: inline-block;
+  margin-right: 5px;
+  width: 19px;
+  height: 16px;
+  background: url("../img/icon-tags.svg") no-repeat 0 0;
+  vertical-align: middle; }
