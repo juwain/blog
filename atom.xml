@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://juwain.ru/"/>
-  <updated>2016-05-03T17:38:30.000Z</updated>
+  <updated>2016-05-06T22:38:17.000Z</updated>
   <id>http://juwain.ru/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Баги в браузерах. Кто виноват и что делать?</title>
+    <link href="http://juwain.ru/2016/05/07/dump-talk/"/>
+    <id>http://juwain.ru/2016/05/07/dump-talk/</id>
+    <published>2016-05-06T22:22:45.000Z</published>
+    <updated>2016-05-06T22:38:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;В апреле ездил в Екатеринбург на &lt;a href=&quot;http://dump-conf.ru/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ДАМП&lt;/a&gt;. Рассказывал про баги в браузерах. Вот и видео выступления с конференции подоспело.&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/K4cQH85bntQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://juwain.ru/presentation/browser-bugs/&quot;&gt;Презентация&lt;/a&gt; прилагается.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;В апреле ездил в Екатеринбург на &lt;a href=&quot;http://dump-conf.ru/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ДАМП&lt;/a&gt;. Рассказывал про баги в браузерах
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://juwain.ru/tags/CSS/"/>
+    
+      <category term="доклады" scheme="http://juwain.ru/tags/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Техника помидора</title>
@@ -276,14 +301,14 @@
     <link href="http://juwain.ru/2015/01/21/atom/"/>
     <id>http://juwain.ru/2015/01/21/atom/</id>
     <published>2015-01-20T21:07:01.000Z</published>
-    <updated>2016-05-03T17:40:22.000Z</updated>
+    <updated>2016-05-06T22:35:48.000Z</updated>
     
-    <content type="html">&lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/pres/atom-overview/&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/presentation/atom-overview/&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/pres/atom-overview/&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
+      &lt;p&gt;Обзорная &lt;a href=&quot;http://juwain.ru/presentation/atom-overview/&quot;&gt;презентация&lt;/a&gt; по редактору Atom. Скоро будет ещё и скринкаст.&lt;/p&gt;
 
     
     </summary>
