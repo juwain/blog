@@ -6,4 +6,4 @@ tags:
 - workflow
 ---
 
-Обзорная [презентация](http://juwain.ru/pres/atom-overview/) по редактору Atom. Скоро будет ещё и скринкаст.
+Обзорная [презентация](http://juwain.ru/presentation/atom-overview/) по редактору Atom. Скоро будет ещё и скринкаст.
