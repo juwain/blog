@@ -78,6 +78,11 @@ figure.highlight {
     border-spacing: 0;
   }
 
+  span,
+  br {
+    margin: 0;
+  }
+
   .gutter {
     color: color-meta;
     padding-right: 15px;
