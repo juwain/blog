@@ -56,6 +56,9 @@ figure.highlight {
   figure.highlight table {
     margin: 0;
     border-spacing: 0; }
+  figure.highlight span,
+  figure.highlight br {
+    margin: 0; }
   figure.highlight .gutter {
     color: color-meta;
     padding-right: 15px;
