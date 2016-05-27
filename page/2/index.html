@@ -43,6 +43,59 @@
   <div class="article-top">
     
   
+    <h2 class="article-title"><a href="/2015/07/05/js-this-call-apply-bind/"><span>JS-ликбез. this, call, apply, bind</span></a></h2>
+  
+
+
+
+    <time class="entry-date published" datetime="2015-07-05T20:22:48.000Z">
+      05.07.2015
+    </time>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>А сегодня я буду вещать про <code>this</code> и методы вызова функций.</p>
+<h3 id="Тот-самый-this"><a href="#Тот-самый-this" class="headerlink" title="Тот самый this"></a>Тот самый this</h3><p>Чтобы вызвать функцию и передать в неё желаемый объект в качестве <code>this</code>, можно воспользоваться методами функций <code>call</code>, <code>apply</code> или <code>bind</code>. Рассмотрим их различия.</p>
+<h3 id="Метод-call"><a href="#Метод-call" class="headerlink" title="Метод call"></a>Метод call</h3><p>В качестве аргументов метод <code>call</code> функции первым принимает объект, который станет <code>this</code> внутри функции. За ним перечисляются через запятую параметры самой функции.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> + param2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.call(favorite, <span class="string">'яблоко'</span>, <span class="string">'груша'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша»</span></span><br></pre></td></tr></table></figure>
+<h3 id="Метод-apply"><a href="#Метод-apply" class="headerlink" title="Метод apply"></a>Метод apply</h3><p>Метод <code>apply</code> отличается от <code>call</code> тем, что в него можно передать любое число параметров в виде одного массива. В случае, когда параметров у функции много, нет необходимости их всех перечислять через запятую, а можно просто передать одним массивом.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2, param3</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> +</span><br><span class="line">  param2 + <span class="string">', '</span> + param3);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.apply(favorite, [<span class="string">'яблоко'</span>, <span class="string">'груша'</span>, <span class="string">'вишня'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша, вишня»</span></span><br></pre></td></tr></table></figure>
+<p>Массивом в функцию удобно как раз передавать неопределённое число параметров. И внутри функции в таком случае лучше не завязываться на конкретные названия параметров, а использовать объект <code>arguments</code> для доступа ко всем параметрам сразу.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> +</span><br><span class="line">  [].slice.call(<span class="built_in">arguments</span>).join(<span class="string">', '</span>));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">omnomnom.apply(favorite, [<span class="string">'яблоко'</span>, <span class="string">'груша'</span>, <span class="string">'вишня'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша, вишня»</span></span><br></pre></td></tr></table></figure>
+<h3 id="Метод-bind"><a href="#Метод-bind" class="headerlink" title="Метод bind"></a>Метод bind</h3><p>Метод <code>bind</code> отличается тем, что не выполняет функцию сразу, как <code>call</code> и <code>apply</code>, а возвращает её. Возвращённая функция вызвается как обычно, но внутри неё уже будет заданный <code>this</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> omnomnom = <span class="function"><span class="keyword">function</span>(<span class="params">param1, param2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Любимые '</span> + <span class="keyword">this</span>.category + <span class="string">': '</span> + param1 + <span class="string">', '</span> + param2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> favorite = &#123;</span><br><span class="line">  category: <span class="string">'фрукты'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = omnomnom.bind(favorite, <span class="string">'яблоко'</span>);</span><br><span class="line">func(<span class="string">'груша'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// выведет «Любимые фрукты: яблоко, груша»</span></span><br></pre></td></tr></table></figure>
+<p>Заметьте, что остальные параметры могут передаваться списком через запятую как в метод <code>bind</code>, так и при вызове возвращенной функции.</p>
+<p>Продолжение следует…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+        <div class="article-meta">
+          
+  
+
+  <span class="post-tags">
+    <a href="/tags/JS/">JS</a>, <a href="/tags/JS-ликбез/">JS-ликбез</a>
+  </span>
+
+
+
+        </div>
+    </footer>
+  </div>
+</article>
+
+
+  <article class="post article">
+
+  <div class="article-top">
+    
+  
     <h2 class="article-title"><a href="/2015/06/21/js-loops-and-array-iterating/"><span>JS-ликбез. Циклы и обход массивов</span></a></h2>
   
 
@@ -257,72 +310,13 @@
 </article>
 
 
-  <article class="post article">
-
-  <div class="article-top">
-    
-  
-    <h2 class="article-title"><a href="/2014/10/03/user-way/"><span>Пути пользователя</span></a></h2>
-  
-
-
-
-    <time class="entry-date published" datetime="2014-10-02T21:47:38.000Z">
-      03.10.2014
-    </time>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Человек всегда стремился к совершенству: поймать мамонта покрупнее, построить лодку прочнее, возвести просторнее дом. Это качество в нас от природы. И в стремлении достичь цель (получить выгоду, возможности или влияние) мы стараемся затратить как можно меньше собственных ресурсов.</p>
-<p>Так работает наш мозг: лень выполнять бессмысленные действия, тратить силы и время, если это не принесёт плодов. Но если цель ясна, а профит от её достижения очевиден, то человек способен найти более короткий путь, научиться что-то делать эффективнее или изменить окружение, чтобы меньше потратить ресурсов и при этом больше получить.</p>
-<p>В большинстве каждодневных решений мы руководствуемся паттернами поведения, которые мозг всю жизнь старательно накапливает. Паттерны формируются в основном из прямого опыта человека и нужны для того, чтобы в привычных ситуациях не обдумывать одинаковые решения каждый раз заново.</p>
-<p>В любой ситуации мозг в первую очередь выдаст наименее ресурсоёмкие шаблонные решения. За примером далеко ходить не надо:</p>
-<img src="/2014/10/03/user-way/road1.jpg" alt="Первая дорога" title="Первая дорога">
-<img src="/2014/10/03/user-way/road2.jpg" alt="Вторая дорога" title="Вторая дорога">
-<p>Самый удобный путь — простой и короткий. Если простое решение очевидно, становится лень прилагать лишние усилия.</p>
-<p>Этот принцип можно применять при проектировании любой пользовательской системы: здания, парка, веб-приложения или чего-либо ещё.</p>
-<p>Итак, пользователь появляется в новой для себя системе. У него есть определённые цели или же он исследует систему, придумывая цели на ходу. В своих решениях он руководствуется собственными паттернами поведения. И, вполне возможно, что цели человека отличаются от предположенных проектировщиком. Или же человек решает свои задачи своеобразно, не так, как планировалось.</p>
-<p>Что важно сделать на этом этапе знакомства с системой? Не ругать и не обижаться на пользователя за то, что он какой-то неправильный. И не заставлять идти пользователя одним непреложным путём, только потому, что так решил автор или заказчик системы. Наоборот — нужно не препятствовать пользователям и тщательно собрать и проанализировать их поведение внутри системы. При этом важно, чтобы пользователи чувствовали себя естественно и обладали достаточной свободой в принятии решений.</p>
-<p>Действия пользователей фиксируются двумя способами:</p>
-<ol>
-<li>Пользователи сами оставляют следы, видоизменяя систему, как в случае с тропинками, фиксируются и анализируются уже последствия этих изменений. При этом прямое наблюдение за процессом может не вестись. Наиболее распространённые действия пользователей наглядно проявляются в изменениях самой системы.</li>
-<li>Наблюдается непосредственно сам процесс пользовательских действий. Все наблюдения анализируются и выявляются общие признаки, направления и цели. Этот способ больше подходит для виртуальных систем, где пользователь не всегда может непосредственно влиять на систему.</li>
-</ol>
-<p>В обоих случаях пользователей можно дополнительно опрашивать по результатам взаимодействия с системой, но наиболее важными всё равно являются сами их действия, а не впечатления, так как многие их склонны приукрашивать.</p>
-<p>Выявленные закономерности целей и направлений («протоптанные тропинки») берутся за основу при строительстве «постоянных дорог» пользователей в системе. Увидев заасфальтированную дорожку на месте привычной тропинки, пользователь будет счастлив по ней ходить. Системой с естественной навигацией, простой и понятной для большинства, будут часто и с удовольствием пользоваться.</p>
-<p>При этом даже не самый удобный путь можно сделать необычным и увлекательным, и люди будут выбирать его.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/5jw0_3-GbMg" frameborder="0" allowfullscreen></iframe></div>
-<p>Это тема для следующей статьи.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-        <div class="article-meta">
-          
-  
-
-  <span class="post-tags">
-    <a href="/tags/UX/">UX</a>
-  </span>
-
-
-
-        </div>
-    </footer>
-  </div>
-</article>
-
-
 
 <nav class="pagination">
   
   <a href="/" class="pagination-prev">Назад</a>
   
+  
+  <a href="/page/3/" class="pagination-next">Вперёд</a>
   
 </nav>
 

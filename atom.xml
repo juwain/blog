@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://juwain.ru/"/>
-  <updated>2016-05-06T22:38:17.000Z</updated>
+  <updated>2016-05-27T08:58:39.000Z</updated>
   <id>http://juwain.ru/</id>
   
   <author>
@@ -14,6 +14,104 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Инспекция и причёсывание CSS</title>
+    <link href="http://juwain.ru/2016/05/15/linting-css/"/>
+    <id>http://juwain.ru/2016/05/15/linting-css/</id>
+    <published>2016-05-15T16:12:29.000Z</published>
+    <updated>2016-05-27T08:58:39.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Предыстория&quot;&gt;&lt;a href=&quot;#Предыстория&quot; class=&quot;headerlink&quot; title=&quot;Предыстория&quot;&gt;&lt;/a&gt;Предыстория&lt;/h3&gt;&lt;p&gt;Однажды мы &lt;a href=&quot;https://htmlacademy.ru/blog/62-codeguide-why-what-and-how&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;решили&lt;/a&gt; сделать в Академии &lt;a href=&quot;https://htmlacademy.github.io/codeguide/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;кодгайд&lt;/a&gt;. Кодгайд нам стал нужен для контроля над собственным кодом HTML/CSS и кодом учебных проектов студентов, которые у нас проходят интенсивный курс.&lt;/p&gt;
+&lt;p&gt;Сам по себе кодгайд — хорошая, но нестрогая штука. Команда ознакомилась с ним и взяла на вооружение: загрузили правила кодгайда в мозг, собственный и ученический код стали проверять методом «пристального взгляда».&lt;/p&gt;
+&lt;p&gt;У такого подхода есть очевидный минус — человеческий фактор. Можно запросто забыть или упустить что-то из правил. Чтобы контролировать собственный CSS-код, мы сделали конфигурацию для &lt;a href=&quot;http://csscomb.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSSComb&lt;/a&gt; и как-то справлялись автоматическим «причёсыванием» кода. Это конечно хорошо для производительности: написал CSS, запустил «расчёску», а она тебе сама поправит все недочёты и ошибки. Но совсем не подходит для целей обучения студентов или новичков в команде: человек будет полагаться на автоматическое «причёсывание», вместо того, чтобы самому научиться писать красивый единообразный код.&lt;/p&gt;
+&lt;p&gt;Поэтому я задумался об автоматизированной инспекции кода.&lt;/p&gt;
+&lt;h3 id=&quot;Линтинг&quot;&gt;&lt;a href=&quot;#Линтинг&quot; class=&quot;headerlink&quot; title=&quot;Линтинг&quot;&gt;&lt;/a&gt;Линтинг&lt;/h3&gt;&lt;p&gt;Решений для инспекции CSS на самом деле оказалось не так много. Да и захотелось ещё проверять не только CSS, но и PostCSS, на котором у нас написан новый фронтенд.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/CSSLint/csslint&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSSLint&lt;/a&gt; немного устарел (последний релиз 15 августа 2013), и в нём не так много возможностей для тонкой конфигурации.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/brigade/scss-lint&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SCSS-Lint&lt;/a&gt; подходит только для SCSS, кроме того требует Ruby, что более проблематично, чем Node.js (который уже есть в проектах).&lt;/p&gt;
+&lt;p&gt;А вот &lt;a href=&quot;https://github.com/stylelint/stylelint&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stylelint&lt;/a&gt; отлично себя зарекомендовал:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;большие возможности тонкой настройки «из коробки»;&lt;/li&gt;
+&lt;li&gt;возможность кастомизации;&lt;/li&gt;
+&lt;li&gt;работает с PostCSS и поддерживаемыми им препроцессорными синтаксисами (CSS, SCSS, LESS…).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Stylelint можно запускать из консоли, из Node.js, из таск-раннера или прямо в редакторе. Я сейчас использую его преимущественно из &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Атома&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Всё, что Stylelint умеет проверять «из коробки», можно условно разделить на группы:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;проверка форматирования кода;&lt;/li&gt;
+&lt;li&gt;«цензура» кода;&lt;/li&gt;
+&lt;li&gt;нахождение и предотвращение ошибок.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Всего на момент написания статьи конфигурация Stylelint содержит около 150 правил. Все правила досконально описывать в этой статье не имеет смысла, так как они подробно разобраны в &lt;a href=&quot;http://stylelint.io/user-guide/rules/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;документации&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;Проверка-форматирования-кода&quot;&gt;&lt;a href=&quot;#Проверка-форматирования-кода&quot; class=&quot;headerlink&quot; title=&quot;Проверка форматирования кода&quot;&gt;&lt;/a&gt;Проверка форматирования кода&lt;/h4&gt;&lt;p&gt;Основное, что я жду от линтера — проверка соответствия кодгайду. То есть отступы, табуляция, единицы измерения, отбивка — вот это всё. Вот, к примеру, условно «правильный» код:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/valid-code.png&quot; alt=&quot;Пример «правильного» кода&quot; title=&quot;Пример «правильного» кода&quot;&gt;
+&lt;p&gt;Отступление от описанного в конфиге форматирования сигнализирует об ошибке. Проверяется много чего:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;написание цветов (&lt;code&gt;color-hex-case&lt;/code&gt;, &lt;code&gt;color-hex-length&lt;/code&gt;, &lt;code&gt;color-named&lt;/code&gt;, &lt;code&gt;color-no-hex&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;написание шрифтов (&lt;code&gt;font-family-name-quotes&lt;/code&gt;, &lt;code&gt;font-weight-notation&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;пробелы и табуляция (тут очень много правил: пробелы можно проверять до и после практически любых конструкций в CSS);&lt;/li&gt;
+&lt;li&gt;кавычки (&lt;code&gt;function-url-quotes&lt;/code&gt;, &lt;code&gt;string-quotes&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;переносы в CSS-правилах и списках правил (тут тоже много правил относительно разных конструкций CSS);&lt;/li&gt;
+&lt;li&gt;регистр букв в селекторах, свойствах и значениях (&lt;code&gt;unit-case&lt;/code&gt;, &lt;code&gt;value-keyword-case&lt;/code&gt;,&lt;code&gt;property-case&lt;/code&gt; и другие);&lt;/li&gt;
+&lt;li&gt;двоеточия (&lt;code&gt;selector-pseudo-element-colon-notation&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;и ещё много других моментов.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Пример ошибок в коде:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/invalid-code.png&quot; alt=&quot;Пример кода с неправильным форматированием&quot; title=&quot;Пример кода с неправильным форматированием&quot;&gt;
+&lt;p&gt;Замечу, что Stylelint развивается быстрыми темпами, и за время написания статьи в него добавили ещё с десяток новых классных правил. Так что проверка соответствия стайлгайду — довольно детальная.&lt;/p&gt;
+&lt;h4 id=&quot;«Цензура»-кода&quot;&gt;&lt;a href=&quot;#«Цензура»-кода&quot; class=&quot;headerlink&quot; title=&quot;«Цензура» кода&quot;&gt;&lt;/a&gt;«Цензура» кода&lt;/h4&gt;&lt;p&gt;Кроме базовой проверки стиля кода, Stylelint можно использовать для тотальной «цензуры». Есть возможность вполне безобидного запрета &lt;code&gt;!important&lt;/code&gt; (&lt;code&gt;declaration-no-important&lt;/code&gt;), стилизации по &lt;code&gt;#id&lt;/code&gt; или имени тега (&lt;code&gt;selector-no-attribute&lt;/code&gt;, &lt;code&gt;selector-no-id&lt;/code&gt;). А можно ввести &lt;del&gt;танки&lt;/del&gt; списки запрещённых или наоборот только разрешённых свойств (&lt;code&gt;property-blacklist&lt;/code&gt;, &lt;code&gt;property-whitelist&lt;/code&gt;), значений (&lt;code&gt;property-value-blacklist&lt;/code&gt;, &lt;code&gt;property-value-whitelist&lt;/code&gt;), CSS-функций (&lt;code&gt;function-blacklist&lt;/code&gt;, &lt;code&gt;function-whitelist&lt;/code&gt;), единиц измерения и даже содержимого комментариев.&lt;/p&gt;
+&lt;p&gt;Эта возможность хорошо подходит для формирования набора правил, по которым будет обучаться новичок. Например, в интенсивных курсах HTML Academy по вёрстке для начинающих мы запрещаем пользоваться &lt;code&gt;!important&lt;/code&gt; и расставлять вендорные префиксы вручную:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-important.png&quot; alt=&quot;Пример кода с использованием !important&quot; title=&quot;Пример кода с использованием !important&quot;&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-prefix.png&quot; alt=&quot;Пример кода с вендорными префиксами&quot; title=&quot;Пример кода с вендорными префиксами&quot;&gt;
+&lt;p&gt;Проверку кода можно проводить перед пушем в учебный репозиторий.&lt;/p&gt;
+&lt;h4 id=&quot;Нахождение-и-предотвращение-ошибок&quot;&gt;&lt;a href=&quot;#Нахождение-и-предотвращение-ошибок&quot; class=&quot;headerlink&quot; title=&quot;Нахождение и предотвращение ошибок&quot;&gt;&lt;/a&gt;Нахождение и предотвращение ошибок&lt;/h4&gt;&lt;p&gt;Ну хорошо. Если всё вышеизложенное можно отнести к стилю кода, то возможности Stylelint по нахождению ошибок и потенциально «опасных» мест в ваших стилях — приятный бонус линтера.&lt;/p&gt;
+&lt;p&gt;Опишу несколько правил Stylelint, которые находят и предотвращают ошибки.&lt;/p&gt;
+&lt;p&gt;Правило &lt;code&gt;color-no-invalid-hex&lt;/code&gt; находит недопустимые символы в шестнадцатеричном представлении цвета:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/invalid-hex.png&quot; alt=&quot;Пример кода с неправильным значением цвета&quot; title=&quot;Пример кода с неправильным значением цвета&quot;&gt;
+&lt;p&gt;Правило &lt;code&gt;no-duplicate-selectors&lt;/code&gt; найдёт одинаковые селекторы:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-duplicates.png&quot; alt=&quot;Пример кода с дубликатом селектора&quot; title=&quot;Пример кода с дубликатом селектора&quot;&gt;
+&lt;p&gt;Правило &lt;code&gt;declaration-block-no-shorthand-property-overrides&lt;/code&gt; предотвратит бессмысленное переопределение свойств внутри правил:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-prop-override.png&quot; alt=&quot;Пример кода с бессмысленным переопределением свойства&quot; title=&quot;Пример кода с бессмысленным переопределением свойства&quot;&gt;
+&lt;p&gt;Правило &lt;code&gt;no-descending-specificity&lt;/code&gt; обнаружит бессмысленное переопределение правил более специфичными селекторами.&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-descending-specificity.png&quot; alt=&quot;Пример кода с бессмысленным переопределением правила&quot; title=&quot;Пример кода с бессмысленным переопределением правила&quot;&gt;
+&lt;p&gt;Правило &lt;code&gt;no-indistinguishable-colors&lt;/code&gt; предупредит о похожих цветах, заданных в CSS:&lt;/p&gt;
+&lt;img src=&quot;/2016/05/15/linting-css/no-indistinguishable-colors.png&quot; alt=&quot;Пример кода с похожими цветами&quot; title=&quot;Пример кода с похожими цветами&quot;&gt;
+&lt;p&gt;На самом деле таких правил-помощников довольно много. Проще изучить их в &lt;a href=&quot;http://stylelint.io/user-guide/rules/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;документации&lt;/a&gt;, так как быстро появляются всё новые правила.&lt;/p&gt;
+&lt;h3 id=&quot;«Причёсывание»&quot;&gt;&lt;a href=&quot;#«Причёсывание»&quot; class=&quot;headerlink&quot; title=&quot;«Причёсывание»&quot;&gt;&lt;/a&gt;«Причёсывание»&lt;/h3&gt;&lt;p&gt;В некоторых случаях хочется или нужно «причесать» стили автоматически.&lt;/p&gt;
+&lt;p&gt;Как я говорил раньше, мы пользовались CSSComb для причесывания стилей. Но, к сожалению, бывало, он глючно работал с нестандартным синтаксисом вроде Sass, вовсе не работал с PostCSS и в целом приостановился в развитии.&lt;/p&gt;
+&lt;p&gt;Так что пришлось искать ему замену. И приятной находкой оказался &lt;a href=&quot;https://github.com/morishitter/stylefmt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stylefmt&lt;/a&gt;, который работает с понимаемыми PostCSS синтаксисами и принимает правила конфигурации Stylelint.&lt;/p&gt;
+&lt;p&gt;Но не всё так чудесно, как хотелось бы. Так как stylefmt — совсем свежий проект, на момент написания статьи он поддерживает далеко не все правила Stylelint:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;переносы и пробелы перед и после открывающих скобок (&lt;code&gt;block-opening-brace-newline-after&lt;/code&gt;, &lt;code&gt;block-opening-brace-newline-before&lt;/code&gt;, &lt;code&gt;block-opening-brace-space-after&lt;/code&gt;, &lt;code&gt;block-opening-brace-space-before&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;отступы (&lt;code&gt;indentation&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;пробелы до и после комбинаторов (&lt;code&gt;selector-combinator-space-after&lt;/code&gt;, &lt;code&gt;selector-combinator-space-before&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;переносы и пробелы перед и после запятых в селекторах (&lt;code&gt;selector-list-comma-newline-after&lt;/code&gt;, &lt;code&gt;selector-list-comma-newline-before&lt;/code&gt;, &lt;code&gt;selector-list-comma-space-after&lt;/code&gt;, &lt;code&gt;selector-list-comma-space-before&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Остальное по-прежнему придётся править руками. Или можно &lt;a href=&quot;https://github.com/morishitter/stylefmt/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;помочь сообществу&lt;/a&gt; и запилить недостающую функциональность.&lt;/p&gt;
+&lt;h3 id=&quot;Сортировка-свойств-в-CSS-правилах&quot;&gt;&lt;a href=&quot;#Сортировка-свойств-в-CSS-правилах&quot; class=&quot;headerlink&quot; title=&quot;Сортировка свойств в CSS-правилах&quot;&gt;&lt;/a&gt;Сортировка свойств в CSS-правилах&lt;/h3&gt;&lt;p&gt;Чем ещё был хорош CSSComb, так это автоматическая сортировка свойств внутри CSS-правил.&lt;/p&gt;
+&lt;p&gt;Вообще-то Stylelint умеет проверять очерёдность свойств в правилах, но линтить это нет особого смысла, так как человеку тяжело да и не нужно запоминать точный порядок всех возможных свойств.&lt;/p&gt;
+&lt;p&gt;А stylefmt пока что не умеет автоматически наводить порядок в очерёдности свойств.&lt;/p&gt;
+&lt;p&gt;Что делать?&lt;/p&gt;
+&lt;p&gt;На помощь пришёл замечательный инструмент &lt;a href=&quot;https://github.com/hudochenkov/postcss-sorting&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostCSS Sorting&lt;/a&gt;. Он умеет сортировать свойства в правилах синтаксисов, которые понимает PostCSS. Этот инструмент вдохновлён CSSComb, и у него аналогичный конфиг. Запускать его можно тоже таск-раннером или из редактора.&lt;/p&gt;
+&lt;p&gt;Логично предположить, что рано или поздно stylefmt и PostCSS Sorting станут каким-то образом связаны, и их можно будет использовать как один инструмент.&lt;/p&gt;
+&lt;h3 id=&quot;Итого&quot;&gt;&lt;a href=&quot;#Итого&quot; class=&quot;headerlink&quot; title=&quot;Итого&quot;&gt;&lt;/a&gt;Итого&lt;/h3&gt;&lt;p&gt;Я составил и обновляю по мере необходимости конфигурации &lt;a href=&quot;https://github.com/htmlacademy/codeguide/blob/master/.stylelintrc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;для Stylelint&lt;/a&gt; и &lt;a href=&quot;https://github.com/htmlacademy/codeguide/blob/master/.postcss-sorting.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;для PostCSS Sorting&lt;/a&gt;. Их можно просто использовать или переопределить.&lt;/p&gt;
+&lt;p&gt;Держите свой код в порядке!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Предыстория&quot;&gt;&lt;a href=&quot;#Предыстория&quot; class=&quot;headerlink&quot; title=&quot;Предыстория&quot;&gt;&lt;/a&gt;Предыстория&lt;/h3&gt;&lt;p&gt;Однажды мы &lt;a href=&quot;https://htmlac
+    
+    </summary>
+    
+    
+      <category term="workflow" scheme="http://juwain.ru/tags/workflow/"/>
+    
+      <category term="CSS" scheme="http://juwain.ru/tags/CSS/"/>
+    
+      <category term="linting" scheme="http://juwain.ru/tags/linting/"/>
+    
+  </entry>
   
   <entry>
     <title>Баги в браузерах. Кто виноват и что делать?</title>
