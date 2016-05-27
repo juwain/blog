@@ -105,9 +105,9 @@
     </summary>
     
     
-      <category term="workflow" scheme="http://juwain.ru/tags/workflow/"/>
-    
       <category term="CSS" scheme="http://juwain.ru/tags/CSS/"/>
+    
+      <category term="workflow" scheme="http://juwain.ru/tags/workflow/"/>
     
       <category term="linting" scheme="http://juwain.ru/tags/linting/"/>
     
