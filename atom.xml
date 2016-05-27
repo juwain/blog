@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://juwain.ru/"/>
-  <updated>2016-05-27T11:22:14.000Z</updated>
+  <updated>2016-05-27T11:28:39.000Z</updated>
   <id>http://juwain.ru/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Инспекция и причёсывание CSS</title>
-    <link href="http://juwain.ru/2016/05/15/linting-css/"/>
-    <id>http://juwain.ru/2016/05/15/linting-css/</id>
-    <published>2016-05-15T16:12:29.000Z</published>
-    <updated>2016-05-27T11:22:14.000Z</updated>
+    <link href="http://juwain.ru/2016/05/27/linting-css/"/>
+    <id>http://juwain.ru/2016/05/27/linting-css/</id>
+    <published>2016-05-27T09:12:29.000Z</published>
+    <updated>2016-05-27T11:28:39.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Предыстория&quot;&gt;&lt;a href=&quot;#Предыстория&quot; class=&quot;headerlink&quot; title=&quot;Предыстория&quot;&gt;&lt;/a&gt;Предыстория&lt;/h3&gt;&lt;p&gt;Однажды мы &lt;a href=&quot;https://htmlacademy.ru/blog/62-codeguide-why-what-and-how&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;решили&lt;/a&gt; сделать в Академии &lt;a href=&quot;https://htmlacademy.github.io/codeguide/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;кодгайд&lt;/a&gt;. Кодгайд нам стал нужен для контроля над собственным кодом HTML/CSS и кодом учебных проектов студентов, которые у нас проходят интенсивный курс.&lt;/p&gt;
 &lt;p&gt;Сам по себе кодгайд — хорошая, но нестрогая штука. Команда ознакомилась с ним и взяла на вооружение: загрузили правила кодгайда в мозг, собственный и ученический код стали проверять методом «пристального взгляда».&lt;/p&gt;
@@ -44,7 +44,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Всего на момент написания статьи конфигурация Stylelint содержит около 150 правил. Все правила досконально описывать в этой статье не имеет смысла, так как они подробно разобраны в &lt;a href=&quot;http://stylelint.io/user-guide/rules/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;документации&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&quot;Проверка-форматирования-кода&quot;&gt;&lt;a href=&quot;#Проверка-форматирования-кода&quot; class=&quot;headerlink&quot; title=&quot;Проверка форматирования кода&quot;&gt;&lt;/a&gt;Проверка форматирования кода&lt;/h4&gt;&lt;p&gt;Основное, что я жду от линтера — проверка соответствия кодгайду. То есть отступы, табуляция, единицы измерения, отбивка — вот это всё. Вот, к примеру, условно «правильный» код:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/valid-code.png&quot; alt=&quot;Пример «правильного» кода&quot; title=&quot;Пример «правильного» кода&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/valid-code.png&quot; alt=&quot;Пример «правильного» кода&quot; title=&quot;Пример «правильного» кода&quot;&gt;
 &lt;p&gt;Отступление от описанного в конфиге форматирования сигнализирует об ошибке. Проверяется много чего:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;написание цветов (&lt;code&gt;color-hex-case&lt;/code&gt;, &lt;code&gt;color-hex-length&lt;/code&gt;, &lt;code&gt;color-named&lt;/code&gt;, &lt;code&gt;color-no-hex&lt;/code&gt;);&lt;/li&gt;
@@ -57,25 +57,25 @@
 &lt;li&gt;и ещё много других моментов.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Пример ошибок в коде:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/invalid-code.png&quot; alt=&quot;Пример кода с неправильным форматированием&quot; title=&quot;Пример кода с неправильным форматированием&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/invalid-code.png&quot; alt=&quot;Пример кода с неправильным форматированием&quot; title=&quot;Пример кода с неправильным форматированием&quot;&gt;
 &lt;p&gt;Замечу, что Stylelint развивается быстрыми темпами, и за время написания статьи в него добавили ещё с десяток новых классных правил. Так что проверка соответствия стайлгайду — довольно детальная.&lt;/p&gt;
 &lt;h4 id=&quot;«Цензура»-кода&quot;&gt;&lt;a href=&quot;#«Цензура»-кода&quot; class=&quot;headerlink&quot; title=&quot;«Цензура» кода&quot;&gt;&lt;/a&gt;«Цензура» кода&lt;/h4&gt;&lt;p&gt;Кроме базовой проверки стиля кода, Stylelint можно использовать для тотальной «цензуры». Есть возможность вполне безобидного запрета &lt;code&gt;!important&lt;/code&gt; (&lt;code&gt;declaration-no-important&lt;/code&gt;), стилизации по &lt;code&gt;#id&lt;/code&gt; или имени тега (&lt;code&gt;selector-no-attribute&lt;/code&gt;, &lt;code&gt;selector-no-id&lt;/code&gt;). А можно ввести &lt;del&gt;танки&lt;/del&gt; списки запрещённых или наоборот только разрешённых свойств (&lt;code&gt;property-blacklist&lt;/code&gt;, &lt;code&gt;property-whitelist&lt;/code&gt;), значений (&lt;code&gt;property-value-blacklist&lt;/code&gt;, &lt;code&gt;property-value-whitelist&lt;/code&gt;), CSS-функций (&lt;code&gt;function-blacklist&lt;/code&gt;, &lt;code&gt;function-whitelist&lt;/code&gt;), единиц измерения и даже содержимого комментариев.&lt;/p&gt;
 &lt;p&gt;Эта возможность хорошо подходит для формирования набора правил, по которым будет обучаться новичок. Например, в интенсивных курсах HTML Academy по вёрстке для начинающих мы запрещаем пользоваться &lt;code&gt;!important&lt;/code&gt; и расставлять вендорные префиксы вручную:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-important.png&quot; alt=&quot;Пример кода с использованием !important&quot; title=&quot;Пример кода с использованием !important&quot;&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-prefix.png&quot; alt=&quot;Пример кода с вендорными префиксами&quot; title=&quot;Пример кода с вендорными префиксами&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-important.png&quot; alt=&quot;Пример кода с использованием !important&quot; title=&quot;Пример кода с использованием !important&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-prefix.png&quot; alt=&quot;Пример кода с вендорными префиксами&quot; title=&quot;Пример кода с вендорными префиксами&quot;&gt;
 &lt;p&gt;Проверку кода можно проводить перед пушем в учебный репозиторий.&lt;/p&gt;
 &lt;h4 id=&quot;Нахождение-и-предотвращение-ошибок&quot;&gt;&lt;a href=&quot;#Нахождение-и-предотвращение-ошибок&quot; class=&quot;headerlink&quot; title=&quot;Нахождение и предотвращение ошибок&quot;&gt;&lt;/a&gt;Нахождение и предотвращение ошибок&lt;/h4&gt;&lt;p&gt;Ну хорошо. Если всё вышеизложенное можно отнести к стилю кода, то возможности Stylelint по нахождению ошибок и потенциально «опасных» мест в ваших стилях — приятный бонус линтера.&lt;/p&gt;
 &lt;p&gt;Опишу несколько правил Stylelint, которые находят и предотвращают ошибки.&lt;/p&gt;
 &lt;p&gt;Правило &lt;code&gt;color-no-invalid-hex&lt;/code&gt; находит недопустимые символы в шестнадцатеричном представлении цвета:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/invalid-hex.png&quot; alt=&quot;Пример кода с неправильным значением цвета&quot; title=&quot;Пример кода с неправильным значением цвета&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/invalid-hex.png&quot; alt=&quot;Пример кода с неправильным значением цвета&quot; title=&quot;Пример кода с неправильным значением цвета&quot;&gt;
 &lt;p&gt;Правило &lt;code&gt;no-duplicate-selectors&lt;/code&gt; найдёт одинаковые селекторы:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-duplicates.png&quot; alt=&quot;Пример кода с дубликатом селектора&quot; title=&quot;Пример кода с дубликатом селектора&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-duplicates.png&quot; alt=&quot;Пример кода с дубликатом селектора&quot; title=&quot;Пример кода с дубликатом селектора&quot;&gt;
 &lt;p&gt;Правило &lt;code&gt;declaration-block-no-shorthand-property-overrides&lt;/code&gt; предотвратит бессмысленное переопределение свойств внутри правил:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-prop-override.png&quot; alt=&quot;Пример кода с бессмысленным переопределением свойства&quot; title=&quot;Пример кода с бессмысленным переопределением свойства&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-prop-override.png&quot; alt=&quot;Пример кода с бессмысленным переопределением свойства&quot; title=&quot;Пример кода с бессмысленным переопределением свойства&quot;&gt;
 &lt;p&gt;Правило &lt;code&gt;no-descending-specificity&lt;/code&gt; обнаружит бессмысленное переопределение правил более специфичными селекторами.&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-descending-specificity.png&quot; alt=&quot;Пример кода с бессмысленным переопределением правила&quot; title=&quot;Пример кода с бессмысленным переопределением правила&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-descending-specificity.png&quot; alt=&quot;Пример кода с бессмысленным переопределением правила&quot; title=&quot;Пример кода с бессмысленным переопределением правила&quot;&gt;
 &lt;p&gt;Правило &lt;code&gt;no-indistinguishable-colors&lt;/code&gt; предупредит о похожих цветах, заданных в CSS:&lt;/p&gt;
-&lt;img src=&quot;/2016/05/15/linting-css/no-indistinguishable-colors.png&quot; alt=&quot;Пример кода с похожими цветами&quot; title=&quot;Пример кода с похожими цветами&quot;&gt;
+&lt;img src=&quot;/2016/05/27/linting-css/no-indistinguishable-colors.png&quot; alt=&quot;Пример кода с похожими цветами&quot; title=&quot;Пример кода с похожими цветами&quot;&gt;
 &lt;p&gt;На самом деле таких правил-помощников довольно много. Проще изучить их в &lt;a href=&quot;http://stylelint.io/user-guide/rules/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;документации&lt;/a&gt;, так как быстро появляются всё новые правила.&lt;/p&gt;
 &lt;h3 id=&quot;«Причёсывание»&quot;&gt;&lt;a href=&quot;#«Причёсывание»&quot; class=&quot;headerlink&quot; title=&quot;«Причёсывание»&quot;&gt;&lt;/a&gt;«Причёсывание»&lt;/h3&gt;&lt;p&gt;В некоторых случаях хочется или нужно «причесать» стили автоматически.&lt;/p&gt;
 &lt;p&gt;Как я говорил раньше, мы пользовались CSSComb для причесывания стилей. Но, к сожалению, бывало, он глючно работал с нестандартным синтаксисом вроде Sass, вовсе не работал с PostCSS и в целом приостановился в развитии.&lt;/p&gt;
