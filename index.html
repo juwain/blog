@@ -14,9 +14,9 @@
 
   
 
-  <link href="/img/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Заметки о фронтенде" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link href="/blog/img/favicon.png" rel="icon">
+  <link rel="alternate" href="/blog/atom.xml" title="Заметки о фронтенде" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/style.css" media="screen" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
@@ -25,13 +25,13 @@
 <body>
 
   <header><hgroup class="alignCenter">
-  <h1><a class="title" href="/">Заметки о фронтенде</a></h1>
+  <h1><a class="title" href="/blog/">Заметки о фронтенде</a></h1>
   <p>
     Блог Виталия Зюзина
   </p>
   <p>
-    <a href="/">
-      <img src="/img/mech-heart.svg" alt="Логотип сайта" class="logo" width="80" height="104">
+    <a href="/blog/">
+      <img src="/blog/img/mech-heart.svg" alt="Логотип сайта" class="logo" width="80" height="104">
     </a>
   </p>
 </hgroup>
@@ -43,7 +43,7 @@
   <div class="article-top">
     
   
-    <h2 class="article-title"><a href="/2016/05/27/linting-css/"><span>Инспекция и причёсывание CSS</span></a></h2>
+    <h2 class="article-title"><a href="/blog/2016/05/27/linting-css/"><span>Инспекция и причёсывание CSS</span></a></h2>
   
 
 
@@ -81,7 +81,7 @@
 </ul>
 <p>Всего на момент написания статьи конфигурация Stylelint содержит около 150 правил. Все правила досконально описывать в этой статье не имеет смысла, так как они подробно разобраны в <a href="http://stylelint.io/user-guide/rules/" target="_blank" rel="external">документации</a>.</p>
 <h4 id="Проверка-форматирования-кода"><a href="#Проверка-форматирования-кода" class="headerlink" title="Проверка форматирования кода"></a>Проверка форматирования кода</h4><p>Основное, что я жду от линтера — проверка соответствия кодгайду. То есть отступы, табуляция, единицы измерения, отбивка — вот это всё. Вот, к примеру, условно «правильный» код:</p>
-<img src="/2016/05/27/linting-css/valid-code.png" alt="Пример «правильного» кода" title="Пример «правильного» кода">
+<img src="/blog/2016/05/27/linting-css/valid-code.png" alt="Пример «правильного» кода" title="Пример «правильного» кода">
 <p>Отступление от описанного в конфиге форматирования сигнализирует об ошибке. Проверяется много чего:</p>
 <ul>
 <li>написание цветов (<code>color-hex-case</code>, <code>color-hex-length</code>, <code>color-named</code>, <code>color-no-hex</code>);</li>
@@ -94,25 +94,25 @@
 <li>и ещё много других моментов.</li>
 </ul>
 <p>Пример ошибок в коде:</p>
-<img src="/2016/05/27/linting-css/invalid-code.png" alt="Пример кода с неправильным форматированием" title="Пример кода с неправильным форматированием">
+<img src="/blog/2016/05/27/linting-css/invalid-code.png" alt="Пример кода с неправильным форматированием" title="Пример кода с неправильным форматированием">
 <p>Замечу, что Stylelint развивается быстрыми темпами, и за время написания статьи в него добавили ещё с десяток новых классных правил. Так что проверка соответствия стайлгайду — довольно детальная.</p>
 <h4 id="«Цензура»-кода"><a href="#«Цензура»-кода" class="headerlink" title="«Цензура» кода"></a>«Цензура» кода</h4><p>Кроме базовой проверки стиля кода, Stylelint можно использовать для тотальной «цензуры». Есть возможность вполне безобидного запрета <code>!important</code> (<code>declaration-no-important</code>), стилизации по <code>#id</code> или имени тега (<code>selector-no-attribute</code>, <code>selector-no-id</code>). А можно ввести <del>танки</del> списки запрещённых или наоборот только разрешённых свойств (<code>property-blacklist</code>, <code>property-whitelist</code>), значений (<code>property-value-blacklist</code>, <code>property-value-whitelist</code>), CSS-функций (<code>function-blacklist</code>, <code>function-whitelist</code>), единиц измерения и даже содержимого комментариев.</p>
 <p>Эта возможность хорошо подходит для формирования набора правил, по которым будет обучаться новичок. Например, в интенсивных курсах HTML Academy по вёрстке для начинающих мы запрещаем пользоваться <code>!important</code> и расставлять вендорные префиксы вручную:</p>
-<img src="/2016/05/27/linting-css/no-important.png" alt="Пример кода с использованием !important" title="Пример кода с использованием !important">
-<img src="/2016/05/27/linting-css/no-prefix.png" alt="Пример кода с вендорными префиксами" title="Пример кода с вендорными префиксами">
+<img src="/blog/2016/05/27/linting-css/no-important.png" alt="Пример кода с использованием !important" title="Пример кода с использованием !important">
+<img src="/blog/2016/05/27/linting-css/no-prefix.png" alt="Пример кода с вендорными префиксами" title="Пример кода с вендорными префиксами">
 <p>Проверку кода можно проводить перед пушем в учебный репозиторий.</p>
 <h4 id="Нахождение-и-предотвращение-ошибок"><a href="#Нахождение-и-предотвращение-ошибок" class="headerlink" title="Нахождение и предотвращение ошибок"></a>Нахождение и предотвращение ошибок</h4><p>Ну хорошо. Если всё вышеизложенное можно отнести к стилю кода, то возможности Stylelint по нахождению ошибок и потенциально «опасных» мест в ваших стилях — приятный бонус линтера.</p>
 <p>Опишу несколько правил Stylelint, которые находят и предотвращают ошибки.</p>
 <p>Правило <code>color-no-invalid-hex</code> находит недопустимые символы в шестнадцатеричном представлении цвета:</p>
-<img src="/2016/05/27/linting-css/invalid-hex.png" alt="Пример кода с неправильным значением цвета" title="Пример кода с неправильным значением цвета">
+<img src="/blog/2016/05/27/linting-css/invalid-hex.png" alt="Пример кода с неправильным значением цвета" title="Пример кода с неправильным значением цвета">
 <p>Правило <code>no-duplicate-selectors</code> найдёт одинаковые селекторы:</p>
-<img src="/2016/05/27/linting-css/no-duplicates.png" alt="Пример кода с дубликатом селектора" title="Пример кода с дубликатом селектора">
+<img src="/blog/2016/05/27/linting-css/no-duplicates.png" alt="Пример кода с дубликатом селектора" title="Пример кода с дубликатом селектора">
 <p>Правило <code>declaration-block-no-shorthand-property-overrides</code> предотвратит бессмысленное переопределение свойств внутри правил:</p>
-<img src="/2016/05/27/linting-css/no-prop-override.png" alt="Пример кода с бессмысленным переопределением свойства" title="Пример кода с бессмысленным переопределением свойства">
+<img src="/blog/2016/05/27/linting-css/no-prop-override.png" alt="Пример кода с бессмысленным переопределением свойства" title="Пример кода с бессмысленным переопределением свойства">
 <p>Правило <code>no-descending-specificity</code> обнаружит бессмысленное переопределение правил более специфичными селекторами.</p>
-<img src="/2016/05/27/linting-css/no-descending-specificity.png" alt="Пример кода с бессмысленным переопределением правила" title="Пример кода с бессмысленным переопределением правила">
+<img src="/blog/2016/05/27/linting-css/no-descending-specificity.png" alt="Пример кода с бессмысленным переопределением правила" title="Пример кода с бессмысленным переопределением правила">
 <p>Правило <code>no-indistinguishable-colors</code> предупредит о похожих цветах, заданных в CSS:</p>
-<img src="/2016/05/27/linting-css/no-indistinguishable-colors.png" alt="Пример кода с похожими цветами" title="Пример кода с похожими цветами">
+<img src="/blog/2016/05/27/linting-css/no-indistinguishable-colors.png" alt="Пример кода с похожими цветами" title="Пример кода с похожими цветами">
 <p>На самом деле таких правил-помощников довольно много. Проще изучить их в <a href="http://stylelint.io/user-guide/rules/" target="_blank" rel="external">документации</a>, так как быстро появляются всё новые правила.</p>
 <h3 id="«Причёсывание»"><a href="#«Причёсывание»" class="headerlink" title="«Причёсывание»"></a>«Причёсывание»</h3><p>В некоторых случаях хочется или нужно «причесать» стили автоматически.</p>
 <p>Как я говорил раньше, мы пользовались CSSComb для причесывания стилей. Но, к сожалению, бывало, он глючно работал с нестандартным синтаксисом вроде Sass, вовсе не работал с PostCSS и в целом приостановился в развитии.</p>
@@ -142,7 +142,7 @@
   
 
   <span class="post-tags">
-    <a href="/tags/workflow/">workflow</a>, <a href="/tags/CSS/">CSS</a>, <a href="/tags/linting/">linting</a>
+    <a href="/blog/tags/workflow/">workflow</a>, <a href="/blog/tags/CSS/">CSS</a>, <a href="/blog/tags/linting/">linting</a>
   </span>
 
 
@@ -158,7 +158,7 @@
   <div class="article-top">
     
   
-    <h2 class="article-title"><a href="/2016/05/07/dump-talk/"><span>Баги в браузерах. Кто виноват и что делать?</span></a></h2>
+    <h2 class="article-title"><a href="/blog/2016/05/07/dump-talk/"><span>Баги в браузерах. Кто виноват и что делать?</span></a></h2>
   
 
 
@@ -176,7 +176,7 @@
       
         <p>В апреле ездил в Екатеринбург на <a href="http://dump-conf.ru/" target="_blank" rel="external">ДАМП</a>. Рассказывал про баги в браузерах. Вот и видео выступления с конференции подоспело.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/K4cQH85bntQ" frameborder="0" allowfullscreen></iframe></div>
-<p><a href="http://juwain.ru/presentation/browser-bugs/">Презентация</a> прилагается.</p>
+<p><a href="http://juwain.ru/presentation/browser-bugs/" target="_blank" rel="external">Презентация</a> прилагается.</p>
 
       
     </div>
@@ -186,7 +186,7 @@
   
 
   <span class="post-tags">
-    <a href="/tags/CSS/">CSS</a>, <a href="/tags/доклады/">доклады</a>
+    <a href="/blog/tags/CSS/">CSS</a>, <a href="/blog/tags/доклады/">доклады</a>
   </span>
 
 
@@ -202,7 +202,7 @@
   <div class="article-top">
     
   
-    <h2 class="article-title"><a href="/2015/09/03/pomodoro-technique/"><span>Техника помидора</span></a></h2>
+    <h2 class="article-title"><a href="/blog/2015/09/03/pomodoro-technique/"><span>Техника помидора</span></a></h2>
   
 
 
@@ -258,7 +258,7 @@
   
 
   <span class="post-tags">
-    <a href="/tags/управление-временем/">управление временем</a>
+    <a href="/blog/tags/управление-временем/">управление временем</a>
   </span>
 
 
@@ -274,7 +274,7 @@
   <div class="article-top">
     
   
-    <h2 class="article-title"><a href="/2015/07/15/design-elements-button/"><span>Кнопка</span></a></h2>
+    <h2 class="article-title"><a href="/blog/2015/07/15/design-elements-button/"><span>Кнопка</span></a></h2>
   
 
 
@@ -302,7 +302,7 @@
   
 
   <span class="post-tags">
-    <a href="/tags/CSS/">CSS</a>
+    <a href="/blog/tags/CSS/">CSS</a>
   </span>
 
 
@@ -318,7 +318,7 @@
   <div class="article-top">
     
   
-    <h2 class="article-title"><a href="/2015/07/14/background-offsets/"><span>Отступы фонового изображения</span></a></h2>
+    <h2 class="article-title"><a href="/blog/2015/07/14/background-offsets/"><span>Отступы фонового изображения</span></a></h2>
   
 
 
@@ -346,7 +346,7 @@
   
 
   <span class="post-tags">
-    <a href="/tags/CSS/">CSS</a>
+    <a href="/blog/tags/CSS/">CSS</a>
   </span>
 
 
@@ -361,14 +361,14 @@
 <nav class="pagination">
   
   
-  <a href="/page/2/" class="pagination-next">Вперёд</a>
+  <a href="/blog/page/2/" class="pagination-next">Вперёд</a>
   
 </nav>
 
 
   <footer role="contentinfo"><p class="site-info">
   
-  &copy; 2016 Виталий Зюзин
+  &copy; 2017 Виталий Зюзин
   
 </p>
 </footer>
