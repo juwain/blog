@@ -10,4 +10,4 @@ tags:
 
 {% youtube K4cQH85bntQ %}
 
-[Презентация](http://juwain.ru/presentation/browser-bugs/) прилагается.
+[Презентация](https://juwain.github.io/blog/presentation/browser-bugs/) прилагается.
