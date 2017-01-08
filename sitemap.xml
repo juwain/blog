@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://juwain.github.io/blog/2016/05/27/linting-css/</loc>
-    
-    <lastmod>2016-05-27T11:28:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://juwain.github.io/blog/2016/05/07/dump-talk/</loc>
     
-    <lastmod>2016-05-06T22:38:17.000Z</lastmod>
+    <lastmod>2017-01-08T18:39:43.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://juwain.github.io/blog/2015/01/21/atom/</loc>
     
-    <lastmod>2016-05-06T22:35:48.000Z</lastmod>
+    <lastmod>2017-01-08T18:39:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juwain.github.io/blog/2016/05/27/linting-css/</loc>
+    
+    <lastmod>2016-05-27T11:28:39.000Z</lastmod>
     
   </url>
   
